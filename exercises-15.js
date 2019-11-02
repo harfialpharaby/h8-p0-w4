@@ -1,24 +1,23 @@
-function highestScore (students) {
-    // Code disini
+function highestScore(students) {
+  // Code disini
 
-    var res = {};
-    for (let i = 0; i < students.length; i++) {
-        if (!(students[i].class in res)) {
-            res[students[i].class] = {};
-            res[students[i].class].name = students[i].name;
-            res[students[i].class].score = students[i].score;         
-        } else if(students[i].score > res[students[i].class].score) {
-            res[students[i].class].name = students[i].name;
-            res[students[i].class].score = students[i].score;
-        }
+  var res = {};
+  for (let i = 0; i < students.length; i++) {
+    if (!(students[i].class in res)) {
+      res[students[i].class] = {};
+      res[students[i].class].name = students[i].name;
+      res[students[i].class].score = students[i].score;
+    } else if (students[i].score > res[students[i].class].score) {
+      res[students[i].class].name = students[i].name;
+      res[students[i].class].score = students[i].score;
     }
+  }
 
-    return res;
+  return res;
 }
 
 // TEST CASE
-console.log(highestScore([
-  {
+console.log(highestScore([{
     name: 'Dimitri',
     score: 90,
     class: 'foxes'
@@ -46,8 +45,7 @@ console.log(highestScore([
 // }
 
 
-console.log(highestScore([
-  {
+console.log(highestScore([{
     name: 'Alexander',
     score: 100,
     class: 'foxes'
