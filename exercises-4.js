@@ -1,6 +1,20 @@
 function cariModus(arr) {
     // you can only write your code here!
+    var modus, count, countTerbanyak = 0;
+    for (let i = 0; i < arr.length; i++) {
+        count = 0;
+        for (let j = 0; j < arr.length; j++) {
+            if(arr[j] === arr[i]){
+                count++;
+            }
+        }
+        if (countTerbanyak < count) {
+            countTerbanyak = count;
+            modus = arr[i];
+        }
+    }
     
+    return countTerbanyak === 1 || countTerbanyak === arr.length ? -1 : modus;
 }
 
 // TEST CASES
