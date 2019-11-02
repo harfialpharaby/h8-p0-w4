@@ -6,35 +6,30 @@ function countProfit(shoppers) {
 
     // you can only write your code here!
     var temp, res = [];
-    console.log('===============================');
+    if (shoppers.length > 0) {
+        for (let i = 0; i < listBarang.length; i++) {
+            // lihat listbarang dan buat object temp untuk inisialisasi detail barang
+            temp = { product: listBarang[i][0],
+                shoppers: [],
+                leftOver: listBarang[i][2],
+                totalProfit: 0
+            };        
     
-    for (let i = 0; i < listBarang.length; i++) {
-        temp = { product: '',
-            shoppers: [],
-            leftOver: 0,
-            totalProfit: 0 
-        };
-
-        for (let j = 0; j < shoppers.length; j++) {
-            if (shoppers[j].product === listBarang[i][0]) {
-                temp.product = shoppers[j].product;
-                temp.shoppers = [];
-                
-                
+            // lihat pembeli yang membeli sesuai dengan nama barang
+            for (let j = 0; j < shoppers.length; j++) {            
+                if (shoppers[j].product === temp.product && shoppers[j].amount <= temp.leftOver) {
+                    temp.shoppers.push(shoppers[j].name);
+                    temp.leftOver -= shoppers[j].amount;
+                    temp.totalProfit += listBarang[i][1] * shoppers[j].amount;
+                }
             }
+    
+            // push data ke res
+            res.push(temp);
         }
-        
-        // for (let j = 0; j < listBarang[i].length; j++) {
-        //     temp = {};
-        //     for (let k = 0; k < shoppers.length; k++) {
-        //         // jika shoppers.product sama dengan barang di list barang dan jumlah listbarang masih <= total shoppers.amount
-        //         if(shoppers[k].product === listBarang[i][j] && ) {
-
-        //         }
-        //     }
-        // }
     }
-    return shoppers[0];
+
+    return res;
 }
 
 // TEST CASES
