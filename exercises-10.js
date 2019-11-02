@@ -2,9 +2,14 @@ function changeMe(arr) {
     // you can only write your code here!
     var detail = ['firstName', 'lastName', 'gender', 'age'];
     var tempRes = {};
+    var yearNow = new Date().getFullYear();
     for (let i = 0; i < arr.length; i++) {        
         for (let j = 0; j < detail.length; j++) {
-            tempRes[detail[j]] = arr[i][3] === undefined && j === 3? 'Invalid Birth Year' : arr[i][j];;
+            if (j === 3) {
+                tempRes[detail[j]] = arr[i][3] === undefined || arr[i][3] > yearNow ? 'Invalid Birth Year' : yearNow-arr[i][j];
+            } else {
+                tempRes[detail[j]] = arr[i][j];
+            }
         }
         console.log(`${i+1}. ${arr[i][0]} ${arr[i][1]}:`);
         console.log(tempRes);
