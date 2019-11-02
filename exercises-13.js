@@ -1,20 +1,20 @@
-function deepSum (arr) {
-    // Code disini
-    var hitung = 0;
+function deepSum(arr) {
+  // Code disini
+  var hitung = 0;
 
-    if (arr.length === 0 || arr[0].length === 0) {
-        return 'No number';
+  if (arr.length === 0 || arr[0].length === 0) {
+    return 'No number';
+  }
+
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
+      for (let k = 0; k < arr[i][j].length; k++) {
+        hitung += arr[i][j][k];
+      }
     }
+  }
 
-    for (let i = 0; i < arr.length; i++) {
-        for (let j = 0; j < arr[i].length; j++) {
-            for (let k = 0; k < arr[i][j].length; k++) {
-                hitung += arr[i][j][k];
-            }
-        }
-    }
-
-    return hitung;
+  return hitung;
 }
 
 //TEST CASE
@@ -57,4 +57,6 @@ console.log(deepSum([
   ]
 ])); // 156
 
-console.log(deepSum([[]])); // No number
+console.log(deepSum([
+  []
+])); // No number
