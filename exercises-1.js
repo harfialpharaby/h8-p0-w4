@@ -7,7 +7,7 @@ function angkaPrima(angka) {
         }
     }
 
-    return count <= 2 ? true : false;
+    return count <= 2;
 }
 
 // TEST CASES
