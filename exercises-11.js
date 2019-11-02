@@ -2,10 +2,10 @@ function shoppingTime(memberId, money) {
     // you can only write your code here!
     var res;
     var harga = {
-        'Sepatu brand Stacattu' : 1500000,
-        'Baju brand Zoro' : 500000,
-        'Baju brand H&N' : 250000,
-        'Sweater brand Uniklooh' : 175000,
+        'Sepatu Stacattu' : 1500000,
+        'Baju Zoro' : 500000,
+        'Baju H&N' : 250000,
+        'Sweater Uniklooh' : 175000,
         'Casing Handphone' : 50000
     };
 
@@ -23,9 +23,9 @@ function shoppingTime(memberId, money) {
 
         // pengisian nama barang yang dibeli diurut dari paling mahal
         for (const key in harga) {
-            if(harga[key] <= money) {
+            if(harga[key] <= res.changeMoney) {
                 res.listPurchased.push(key);
-                money -= harga[key];
+                res.changeMoney -= harga[key];
             }
         }
     }
