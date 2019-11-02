@@ -1,24 +1,23 @@
-function graduates (students) {
-    // Code disini
-    var temp, res = {};
-    for (let i = 0; i < students.length; i++) {
-        // console.log(students[i]);
-        temp = {};
-        if (students[i].score > 75) {
-            if (!(students[i].class in res)) {
-                res[students[i].class] = [];
-            }
-            temp.name = students[i].name;
-            temp.score = students[i].score;
-            res[students[i].class].push(temp);
-        }
+function graduates(students) {
+  // Code disini
+  var temp, res = {};
+  for (let i = 0; i < students.length; i++) {
+    // console.log(students[i]);
+    temp = {};
+    if (students[i].score > 75) {
+      if (!(students[i].class in res)) {
+        res[students[i].class] = [];
+      }
+      temp.name = students[i].name;
+      temp.score = students[i].score;
+      res[students[i].class].push(temp);
     }
+  }
 
-    return res;
+  return res;
 }
 
-console.log(graduates([
-  {
+console.log(graduates([{
     name: 'Dimitri',
     score: 90,
     class: 'foxes'
@@ -50,8 +49,7 @@ console.log(graduates([
 //   ]
 // }
 
-console.log(graduates([
-  {
+console.log(graduates([{
     name: 'Alexander',
     score: 100,
     class: 'foxes'
