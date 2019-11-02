@@ -14,7 +14,7 @@ function urutkanAbjad(str) {
     }
 
     return str.join('');
-    // return temp.sort().join('');
+    // return str.split('').sort().join('');
 }
 
 // TEST CASES
