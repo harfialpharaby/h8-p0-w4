@@ -1,20 +1,24 @@
 function cariModus(arr) {
     // you can only write your code here!
-    var modus, count, countTerbanyak = 0;
+    var temp = {};
+    var modus = 0;
+    var nilaiModus, countOne = 0;
+    
     for (let i = 0; i < arr.length; i++) {
-        count = 0;
-        for (let j = 0; j < arr.length; j++) {
-            if(arr[j] === arr[i]){
-                count++;
-            }
+        temp[arr[i]] === undefined ? temp[arr[i]] = 1 : temp[arr[i]]++;
+    }
+    
+    for (const key in temp) {
+        if (temp[key] === 1) {
+            countOne++;
         }
-        if (countTerbanyak < count) {
-            countTerbanyak = count;
-            modus = arr[i];
+        if (modus < temp[key]) {
+            modus = temp[key];
+            nilaiModus = key;
         }
     }
     
-    return countTerbanyak === 1 || countTerbanyak === arr.length ? -1 : modus;
+    return modus === arr.length || countOne === arr.length ? -1 : nilaiModus;
 }
 
 // TEST CASES
