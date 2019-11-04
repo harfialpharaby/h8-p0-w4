@@ -3,9 +3,10 @@ function fpb(angka1, angka2) {
     var loopBesar = angka1 > angka2 ? angka2 : angka1;
     var res;
 
-    for (let i = 1; i <= loopBesar; i++) {
+    for (let i = loopBesar; i > 0; i--) {
         if(angka1%i===0 && angka2%i===0){
             res = i;
+            break;
         }
     }
 

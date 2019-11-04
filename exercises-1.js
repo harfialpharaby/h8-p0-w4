@@ -1,13 +1,14 @@
 function angkaPrima(angka) {
     // you can only write your code here!
-    var count = 0;
-    for (let i = 1; i <= angka; i++) {
+    var prima = true;
+    for (let i = 2; i < angka; i++) {
         if(angka % i === 0){
-            count++;
+            prima = false;
+            break;
         }
     }
 
-    return count <= 2;
+    return prima;
 }
 
 // TEST CASES
