@@ -4,7 +4,7 @@ function ubahHuruf(kata) {
     var res = ''
 
     for (let i = 0; i < kata.length; i++) {
-        res += alfabet[(alfabet.indexOf(kata[i])+1)];
+        res += alfabet[(alfabet.indexOf(kata[i])+1)%26];
     }
 
     return res;
