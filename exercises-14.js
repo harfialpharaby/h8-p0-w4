@@ -8,7 +8,7 @@ function naikAngkot(arrPenumpang) {
     for (let i = 0; i < arrPenumpang.length; i++) {
         temp = {};
         for (let j = 0; j < detail.length; j++) {
-            temp[detail[j]] = j < detail.length-1 ? arrPenumpang[i][j] : (rute.indexOf(arrPenumpang[i][2]) - rute.indexOf(arrPenumpang[i][1])) * 2000;
+            temp[detail[j]] = j < detail.length-1 ? arrPenumpang[i][j] : Math.abs(rute.indexOf(arrPenumpang[i][2]) - rute.indexOf(arrPenumpang[i][1])) * 2000;
         }
         res.push(temp);
     }
