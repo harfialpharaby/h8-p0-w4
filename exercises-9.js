@@ -2,8 +2,8 @@ function checkAB(num) {
     // you can only write your code here!
     for (let i = 0; i < num.length; i++) {
         if(num[i] === 'a' || num[i] === 'b'){
-            for (let j = i; j < num.length; j+=4) {
-                if((num[i] === 'a' && num[j] === 'b') || (num[i] === 'b' && num[j] === 'a')){
+            for (let j = i+3; j < num.length; j+=3) {
+                if((num[i] === 'a' && num[j+1] === 'b') || (num[i] === 'b' && num[j+1] === 'a')){                    
                     return true;
                 }
             }
