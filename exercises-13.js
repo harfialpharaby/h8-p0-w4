@@ -1,7 +1,7 @@
 function deepSum(arr) {
   // Code disini
   var hitung = 0;
-
+  
   if (arr.length === 0 || arr[0].length === 0) {
     return 'No number';
   }
@@ -57,6 +57,4 @@ console.log(deepSum([
   ]
 ])); // 156
 
-console.log(deepSum([
-  []
-])); // No number
+console.log(deepSum([])); // No number
