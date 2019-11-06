@@ -3,10 +3,12 @@ function highestScore(students) {
 
   var res = {};
   for (let i = 0; i < students.length; i++) {
+    // untuk inisialisasi awal jika key tidak ada di object res
     if (!(students[i].class in res)) {
       res[students[i].class] = {};
       res[students[i].class].name = students[i].name;
       res[students[i].class].score = students[i].score;
+    // jika sudah ada key di res maka ubah data nama dan score dengan yg lebih besar
     } else if (students[i].score > res[students[i].class].score) {
       res[students[i].class].name = students[i].name;
       res[students[i].class].score = students[i].score;
