@@ -1,13 +1,13 @@
 function digitPerkalianMinimum(angka) {
     // you can only write your code here!
-    var temp = {};
-    for (let i = 1; i <= angka; i++) {
-        if(angka % i === 0){
-            temp[i] = angka/i;
+    var sedikit;
+    for (let i = 1; i <= Math.sqrt(angka); i++) {
+        if (angka%i===0 && (sedikit === undefined || sedikit > String(angka/i).length+String(i).length)) {
+            sedikit = String(angka/i).length+String(i).length;
         }
     }
 
-    return temp;
+    return sedikit;
 }
 
 // TEST CASES
