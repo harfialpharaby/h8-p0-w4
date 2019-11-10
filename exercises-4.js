@@ -7,14 +7,14 @@ function cariModus(arr) {
     for (let i = 0; i < arr.length; i++) {
         temp[arr[i]] === undefined ? temp[arr[i]] = 1 : temp[arr[i]]++;
     }
-    
-    for (const key in temp) {
-        if (temp[key] === 1) {
+
+    for (let i = 0; i < arr.length; i++) {
+        if (temp[arr[i]] === 1) {
             countOne++;
         }
-        if (modus < temp[key]) {
-            modus = temp[key];
-            nilaiModus = key;
+        if (modus < temp[arr[i]]) {
+            modus = temp[arr[i]];
+            nilaiModus = arr[i];
         }
     }
     
